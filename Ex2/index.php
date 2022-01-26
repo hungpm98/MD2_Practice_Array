@@ -132,3 +132,35 @@ echo "<pre>";
 echo " Greater Than Avg Array is: ";
 print_r(greaterAvgArray($array1));
 
+function sortArrayUp($array){
+    for ($i=0;$i<count($array);$i++)
+        for($j=0;$j<count($array)-$i-1;$j++){
+            if($array[$j]>$array[$j+1]){
+                $temp = $array[$j+1];
+                $array [$j+1] = $array [$j];
+                $array[$j] = $temp;
+            }
+
+
+    }
+    return $array;
+}
+echo "<pre>";
+echo " Sort Array Up: ";
+print_r(sortArrayUp($array1));
+function sortArrayDown($array){
+    for ($i=0;$i<count($array);$i++)
+        for($j=0;$j<count($array)-$i-1;$j++){
+            if($array[$j]<$array[$j+1]){
+                $temp = $array[$j+1];
+                $array [$j+1] = $array [$j];
+                $array[$j] = $temp;
+            }
+
+
+        }
+    return $array;
+}
+echo "<pre>";
+echo " Sort Array Down: ";
+print_r(sortArrayDown($array1));
